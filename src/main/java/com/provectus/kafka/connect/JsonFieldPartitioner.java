@@ -62,13 +62,11 @@ public class JsonFieldPartitioner<T> extends DefaultPartitioner<T> {
     }
 
     private JsonNode decodeJson(Object sinkRecordValue) {
-        System.out.println(sinkRecordValue.getClass());
         try {
             return mapper.convertValue(sinkRecordValue, JsonNode.class);
         } catch (Exception e) {
-            String excMsg = e.getMessage();
-            log.error(excMsg);
-            throw new PartitionException(excMsg);
+            log.error(e.getMessage(), e);
+            throw new PartitionException(e);
         }
     }
 
