@@ -21,8 +21,9 @@
 
   <distributionManagement>
     <repository>
-      <id>provectus</id>
-      <url>https://artifactory.provectus.com/artifactory/libs-release</url>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/provectus/kafka-connect-json-partitioner</url>
     </repository>
   </distributionManagement>
 
